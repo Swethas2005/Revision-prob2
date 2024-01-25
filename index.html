@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index2.html">
     <title>React Boilerplate Code</title>
 </head>
 <body>
@@ -59,48 +60,11 @@
             );
         };
 
-        // Task 4 (Bonus): Dynamic Container Component
-        const Container = (props) => {
-            const containerStyle = {
-                border: `3px solid ${props.borderColor}`,
-                padding: '25px',
-                margin: '25px',
-            };
-
-            return (
-                <div style={containerStyle}>
-                    {props.children}
-                </div>
-            );
-        };
-
-        // App for Bonus Task
-        const BonusApp = () => {
-            return (
-                <div>
-                    <Container borderColor="green">
-                        <p>This is a green container.</p>
-                        <ScoreCard score={50}/>
-                    </Container>
-                    <Container borderColor="red">
-                        <User name="Jane Smith" age={30} email="jane.smith@gmail.com" />
-                    </Container>
-                    <Container borderColor="blue">
-                        <ScoreCard score={85} />
-                    </Container>
-                    <Container borderColor="aquamarine">
-                        <ScoreCard score={25} />
-                    </Container>
-                    
-                </div>
-            );
-        };
+        
 
         ReactDOM.render(<App />, document.getElementById('root'));
 
-        // ReactDOM.hydrate(<App />, document.getElementById('root')); // Use this if you're server-rendering
-
-        ReactDOM.render(<BonusApp />, document.getElementById('root'));
+        
     </script>
 </body>
 </html>

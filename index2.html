@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        // Task 4 (Bonus): Dynamic Container Component
+        const Container = (props) => {
+            const containerStyle = {
+                border: `3px solid ${props.borderColor}`,
+                padding: '25px',
+                margin: '25px',
+            };
+
+            return (
+                <div style={containerStyle}>
+                    {props.children}
+                </div>
+            );
+        };
+
+        // App for Bonus Task
+        const BonusApp = () => {
+            return (
+                <div>
+                    <Container borderColor="green">
+                        <p>This is a green container.</p>
+                        <ScoreCard score={50}/>
+                    </Container>
+                    <Container borderColor="red">
+                        <User name="Jane Smith" age={30} email="jane.smith@gmail.com" />
+                    </Container>
+                    <Container borderColor="blue">
+                        <ScoreCard score={85} />
+                    </Container>
+                    <Container borderColor="aquamarine">
+                        <ScoreCard score={25} />
+                    </Container>
+                    
+                </div>
+            );
+        };
+
+        ReactDOM.render(<BonusApp />, document.getElementById('root'));
+    </script>
+    
+</body>
+</html>
